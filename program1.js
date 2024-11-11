@@ -11,21 +11,18 @@ const getTotalIsles = function (grid) {
 
   // Depth-First Search function to mark all connected land cells as visited
   function dfs(x, y) {
-      // Stack for DFS
       const stack = [[x, y]];
-      grid[x][y] = 'W';  // Mark the land as water (visited)
+      grid[x][y] = 'W';  
       
       while (stack.length > 0) {
           const [cx, cy] = stack.pop();
           
-          // Explore all 4 possible directions (up, down, left, right)
           for (let [dx, dy] of directions) {
               const nx = cx + dx;
               const ny = cy + dy;
-              
-              // Check if the new position is within bounds and is land
+
               if (nx >= 0 && nx < rows && ny >= 0 && ny < cols && grid[nx][ny] === 'L') {
-                  grid[nx][ny] = 'W';  // Mark it as visited
+                  grid[nx][ny] = 'W';  
                   stack.push([nx, ny]);
               }
           }
