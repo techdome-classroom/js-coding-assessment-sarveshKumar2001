@@ -6,7 +6,6 @@ const getTotalIsles = function (grid) {
   const rows = grid.length;
   const cols = grid[0].length;
 
-  // Directions for moving up, down, left, right
   const directions = [[-1, 0], [1, 0], [0, -1], [0, 1]];
 
   function dfs(x, y) {
