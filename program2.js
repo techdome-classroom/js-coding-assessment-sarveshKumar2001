@@ -7,14 +7,12 @@ const decodeTheRing = function (s, p) {
 
   dp[0][0] = true;
 
-  // Handle patterns starting with '*', because '*' can match empty sequences
   for (let j = 1; j <= n; j++) {
       if (p[j - 1] === '*') {
           dp[0][j] = dp[0][j - 1];
       }
   }
 
-  // Fill the DP table
   for (let i = 1; i <= m; i++) {
       for (let j = 1; j <= n; j++) {
           const patternChar = p[j - 1];
