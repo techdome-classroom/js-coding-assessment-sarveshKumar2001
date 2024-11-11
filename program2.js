@@ -18,10 +18,8 @@ const decodeTheRing = function (s, p) {
           const patternChar = p[j - 1];
 
           if (patternChar === s[i - 1] || patternChar === '?') {
-              // If patternChar matches s[i-1] or patternChar is '?', inherit the previous state
               dp[i][j] = dp[i - 1][j - 1];
           } else if (patternChar === '*') {
-              // '*' can match zero or more characters
               dp[i][j] = dp[i][j - 1] || dp[i - 1][j];
           }
       }
