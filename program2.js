@@ -25,7 +25,6 @@ const decodeTheRing = function (s, p) {
       }
   }
 
-  // The answer is in dp[m][n], where m and n are the lengths of s and p respectively
   return dp[m][n];
 };
 
