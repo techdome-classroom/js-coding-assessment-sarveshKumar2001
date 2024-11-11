@@ -3,10 +3,8 @@ const decodeTheRing = function (s, p) {
   const m = s.length;
   const n = p.length;
 
-  // Create a 2D DP table, where dp[i][j] means whether the first i characters of s match the first j characters of p
   let dp = Array(m + 1).fill(null).map(() => Array(n + 1).fill(false));
 
-  // Base case: both strings are empty, so they match
   dp[0][0] = true;
 
   // Handle patterns starting with '*', because '*' can match empty sequences
