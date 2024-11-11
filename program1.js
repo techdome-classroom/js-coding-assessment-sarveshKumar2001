@@ -9,7 +9,6 @@ const getTotalIsles = function (grid) {
   // Directions for moving up, down, left, right
   const directions = [[-1, 0], [1, 0], [0, -1], [0, 1]];
 
-  // Depth-First Search function to mark all connected land cells as visited
   function dfs(x, y) {
       const stack = [[x, y]];
       grid[x][y] = 'W';  
